@@ -110,7 +110,7 @@ class Member extends Component {
             <div 
               onClick={() => this.handleView(1)}
               className="profile-slider">
-              <div> 좋아요 </div>
+              <div> 핀 </div>
               <div> <strong> {stars.length} </strong> </div>
               <div> 개 </div>
             </div>

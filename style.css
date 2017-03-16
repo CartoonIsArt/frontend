@@ -23,6 +23,9 @@ p.more-comment {
 p.more-comment:hover {
   text-decoration: underline;
 }
+.pinit {
+  transform: rotate(-45deg);
+}
 div.card-youtube-wrapper {
   position: relative;
   width: 100%;

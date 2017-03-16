@@ -41,8 +41,8 @@ class Star extends Component {
     const stars = this.state.stars.filter(star => star.isUp)
     const me = this.state.me
     const onlyStar = this.props.onlyStar
-    const starEmpty = "pt-icon pt-icon-star-empty"
-    const starFill = "pt-icon pt-icon-star"
+    const starEmpty = "pt-icon pt-icon-pin"
+    const starFill = "pt-icon pt-icon-unpin pinit"
     const who = stars.map(star => star.member)
     return(
       <div 
