@@ -1,0 +1,476 @@
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5em;
+}
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+nav {
+  cursor: pointer;
+}
+nav.background-maincolor {
+  background-color: #ff8900 !important;
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+div.recomment {
+  margin-left: 20px;
+}
+p.more-comment {
+  color: cadetblue;
+  cursor: pointer;
+}
+p.more-comment:hover {
+  text-decoration: underline;
+}
+div.card-youtube-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0px;
+  padding-bottom: 56.25%;
+}
+iframe.card-youtube {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+div.card-line-vertical {
+  background-color: #dfdfdf;
+  height: 100%;
+  width: 1px;
+}
+div.card-line {
+  background-color: #dfdfdf;
+  height: 1px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+input.comment {
+  width: 100%;
+  border: none;
+}
+input.comment:focus {
+  border: none;
+  outline: none;
+}
+.copy {
+
+}
+span.login-nav-button {
+  color: #efefef;
+  display: none;
+}
+.login-fail-text{
+  color: red;
+}
+.z-index-99 {
+  z-index: 99 !important;
+}
+.login-title {
+  animation-name: heartbeat;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+
+  line-height: 1.2em;
+  font-size: 54px;
+}
+form.add-comment {
+  margin-left: 12px;
+  flex-grow: 2;
+}
+.login-container {
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flex-grow-2{
+  flex-grow: 2 !important;
+}
+.noti-kind {
+  margin-left: 40px;
+}
+.text-muted {
+  color: #636c72 !important;
+}
+.agree {
+  margin-top: 20px;
+  border: solid 1px #b3b3b3;
+  padding: 20px;
+}
+.agree::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.agree-text {
+  height: 200px;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+.agree-box {
+  margin-bottom: 40px;
+}
+.noti-menu {
+  padding: 12px;
+  font-size: 1.1rem;
+}
+.text-lapisblue {
+  color: #004B8D !important;
+}
+div.row-reverse {
+  flex-direction: row-reverse !important;
+}
+.align-stretch {
+  align-items: stretch !important;
+}
+div.flex-column-container {
+  display: flex;
+  align-items: flex-start;
+}
+div.card-profile-name {
+  margin-left: 8px;
+}
+div.col-5 {
+  width: 25%;
+}
+div.col-4 {
+  width: 20%;
+}
+div.nav-button-cover {
+  width: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.logo {
+  min-width: 80px !important;
+}
+div.container-320 {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+div.container-600 {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+div.container-980 {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.pt-icon-60 {
+  font-size: 60px !important;
+}
+.md-wd60 {
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.profile-dropzone {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+div.card-dropzone {
+  cursor: pointer;
+  width: 100%;
+  min-height: 240px;
+}
+div.container-975{
+  max-width: 975px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+div.nav-padding {
+  padding-top: 58px;
+}
+.card {
+  border: solid #dfdfdf 1px;
+  border-radius: 4px;
+  margin-bottom: 60px;
+}
+div.notification {
+  padding: 8px;
+}
+
+div.card-content {
+  padding: 20px;
+}
+img.card-image {
+  width: 100%;
+  border-bottom: solid #dfdfdf 1px; 
+}
+img.profile-profile {
+  max-height: 100px;
+}
+div.profile-slider {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.text-danger {
+  color: #d83737 !important;
+}
+div.comment {
+  margin-top: 4px;
+}
+div.im-the-boss {
+  z-index: 99; /* like a boss */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #313131;
+  min-height: 100vh;
+}
+.text-white {
+  color: white !important;
+}
+.text-bright {
+  color: #efefef !important;
+}
+div.loginform {
+  width: 312px;
+  padding: 4px;
+}
+.login-input {
+  margin-bottom: 8px;
+}
+nav.login {
+  padding-top: 8px;
+  padding-left: 8px;
+  cursor: auto;
+  margin-right: auto;
+  margin-left: auto;
+  height: 40px;
+}
+.alert {
+  position: fixed;
+  top: 160px;
+  width: 300px;
+}
+
+.club-page {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+.club-join-title {
+  text-align: center;
+}
+.join-success {
+  text-align: center;
+}
+.club-join {
+  padding: 25px;
+  display: block;
+  float: right;
+  width: 362px;
+}
+.club-join-container {
+  margin-top: 32px;
+  width: 950px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.login-button {
+  width: 100%;
+}
+img.login-logo {
+  width: 100%;
+  max-width: 592px;
+}
+.progressbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  height: 4px;
+}
+.display-none{
+  display: none !important;
+}
+.card-text {
+  white-space: pre-line;
+  line-height: 1.5rem;
+}
+.comment-text {
+  margin-left: 4px;
+  line-height: 1.3rem;
+}
+div.profile-input {
+  margin-bottom: 12px;
+}
+.align-start {
+  align-items: flex-start !important;
+}
+button.profile-button {
+  width: 100%;
+  margin-bottom: 4px;
+}
+div.profile-profile-wrapper {
+  margin-right: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+div.container-1080 {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+div.manage-box {
+  border: solid #dfdfdf 1px;
+  margin-top: 4px;
+  padding: 4px;
+}
+div.manage-profile-wrapper {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+img.manage-profile {
+  max-height: 60px;
+}
+img.card-profile-image {
+  max-height: 30px;
+}
+div.card-image-wrapper {
+  width: 100%;
+  border-top: solid #dfdfdf 1px; 
+  overflow: hidden;
+}
+div.card-profile-image-wrapper {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.club-side-content {
+  display: block;
+  margin: 0 420px 0 0;
+  height: 595.5px;
+  text-align: center;
+}
+.club-join-input-error {
+  display: block;
+  color: red;
+}
+.club-join-input {
+  height: 37px;
+  width: 100%;
+}
+.club-join-form {
+  max-width: 312px;
+  margin-bottom: 19.5px;
+}
+.float-right: {
+  float: right !important;
+}
+
+@media (max-width: 800px) {
+  .club-join-title {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+  .club-join-container {
+    max-width: 320px;
+    width: calc(100vw - 88px);
+  }
+  .club-join-form {
+    max-width: 276px;
+    width: 100%;
+  }
+  .club-join {
+    width: 100%;
+    padding: 0px;
+  }
+  .club-side-content {
+    display: none;
+  }
+  .agree-text {
+    height: 120px;
+  }
+}
+
+@media(min-width: 576px) {
+  .login, .login-container {
+    width: 540px;
+  }
+  .login {
+    padding-right: 20px;
+  }
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .copy {
+    padding-right: 0px;
+  }
+  span.login-nav-button {
+    display: none;
+  }
+}
+@media(min-width: 768px) {
+  .login, .login-container {
+    width: 750px;
+  }
+  .login-title {
+    font-size: 48px;
+  }
+  .login {
+    padding-right: 30px;
+  }
+  .login-container {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .copy {
+    padding-right: 40px;
+  }
+  span.login-nav-button {
+    display: inline;
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    text-shadow: 0px 0px 0px white;
+  }
+  to {
+    text-shadow: 0px 0px 128px white;
+  }
+}
+.pt-button.pt-minimal.pt-intent-white {
+  color: #efefef;
+}
