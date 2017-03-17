@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {patchNotifications, getNotificationsByToMemberId, whoami} from './actions'
+import {getByURL, patchNotifications, getNotificationsByToMemberId, whoami} from './actions'
 import CardAuthor from './CardAuthor'
 import {fetchFail, prefix, formatTime} from './config'
 
@@ -8,23 +8,50 @@ class Notifications extends Component {
     super(props)
     this.state = {
       notifications: [],
+      next: "",
       view: 0,
+      me: {},
     }
   }
   componentWillMount() {
     whoami()
     .then(json => {
-      console.log(json)
+      this.setState({me: json})
       getNotificationsByToMemberId(json.id)
-      .then(json => 
-        Number.isInteger(json) ?
-        fetchFail() :
-        this.setState({notifications: json.results}))
+      .then(json => {
+        if(Number.isInteger(json)) {
+          fetchFail()
+        }
+        else {
+          this.setState({notifications: json.results})
+          this.setState({next: json.next})
+        }
+      })
     })
   }
   init() {
     getNotificationsByToMemberId(this.state.me.id)
-   .then(json => this.setSttte({notifications: json.results}))
+    .then(json => {
+      if(Number.isInteger(json)) {
+        fetchFail()
+      }
+      else {
+        this.setState({notifications: json.results})
+        this.setState({next: json.next})
+      }
+    })
+  }
+  last() {
+    getByURL(this.state.next)
+   .then(json => {
+      if(Number.isInteger(json)) {
+        fetchFail()
+      }
+      else {
+        this.setState({notifications: this.state.notifications.concat(json.results)})
+        this.setState({next: json.next})
+      }
+    })
   }
   readAll() {
     var p = []
@@ -105,6 +132,11 @@ class Notifications extends Component {
         <div className="card-line"> </div>
       </div>
       )}
+      <button type="button" 
+        onClick={() => this.last()}
+        className="pt-button pt-minimal pt-icon-more">
+        지난 알림 보기
+      </button>
       </div>
     )
   }

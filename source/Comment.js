@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {formatTime} from './config'
 import CardAuthor from './CardAuthor'
+import Linkify from 'react-linkify'
 import Image from './Image'
 import {deleteComments, postComments, getCommentsByParent} from './actions'
 import {Alert, EditableText, Intent} from '@blueprintjs/core'
@@ -75,7 +76,11 @@ class Comment extends Component {
           </div>
         )}
       </div>
-      <div className="comment-text"> {content.text} </div>
+      <div className="comment-text">
+      <Linkify>
+        {content.text} 
+      </Linkify>
+      </div>
       {depth === 1 &&
         <p 
           onClick={() => this.setState({createRecomment: !this.state.createRecomment})}

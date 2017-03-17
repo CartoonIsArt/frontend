@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Checkbox, InputGroup, Intent} from '@blueprintjs/core'
+import {Toaster, Checkbox, InputGroup, Intent} from '@blueprintjs/core'
 import {patchMembers, whoami, getMembers} from './actions'
 import Image from './Image'
 import Dropzone from 'react-dropzone'
@@ -11,15 +11,34 @@ class ProfilePanel extends Component {
       me: [],
       target: [],
       profile_image: undefined,
+      disabled: false,
     }
     this.form = {}
+  }
+  componentWillMount() {
     whoami()
     .then(json => this.setState({me: [json]}))
     getMembers(this.props.target)
     .then(json => this.setState({target: [json]}))
+    this.toaster = Toaster.create()
   }
   handleSubmit(e) {
+    this.setState({disabled: true})
     patchMembers(this.props.target, this.form)
+    .then(json => {
+      this.setState({disabled: false})
+      Number.isInteger(json) ?
+        this.toaster.show({
+          className: "pt-intent-danger",
+          timeout: 1000,
+          message: "실패"
+      }) :
+        this.toaster.show({
+          className: "pt-intent-success",
+          timeout: 1000,
+          message: "성공"
+      })
+    })
     e.preventDefault()
   }
   onDrop = files => {
@@ -40,7 +59,7 @@ class ProfilePanel extends Component {
           style={{margin: "16px 0px"}}>
         </div>
         {target.map(target =>
-        <form onSubmit={e => this.handleSubmit(e)}>
+        <form key={target.id} onSubmit={e => this.handleSubmit(e)}>
           {me.map(me => 
           <div>
             <div className="flex-container align-start">
@@ -108,7 +127,9 @@ class ProfilePanel extends Component {
             </div>
             <div className="flex-container">
               <div className="flex-grow-2"> </div>
-              <button type="submit" className="pt-button pt-button-primary pt-icon-build">
+              <button 
+                disabled={this.state.disabled}
+                type="submit" className="pt-button pt-button-primary pt-icon-build">
                 확인
               </button>
             </div>

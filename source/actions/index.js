@@ -95,6 +95,18 @@ export const getRocksByURL = url => {
     return 500
   })
 }
+export const getByURL = url => {
+  return fetch(url, headers("GET"))
+  .then(res => (
+    res.status !== 200 ?
+      res.status :
+      res.json().then(json => json)
+  ))
+  .catch(s => {
+    console.log(s)
+    return 500
+  })
+}
 export const getRocks = id => {
   return fetch(host + 'rocks/' + id + '/', headers("GET"))
   .then(res => (
