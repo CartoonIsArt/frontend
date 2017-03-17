@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {postStar, deleteStar, whoami, getStarsByRockId} from './actions'
+import {Intent, Position, Tooltip} from '@blueprintjs/core'
+import TooltipContent from './TooltipContent'
 
 class Star extends Component {
   constructor(props) {
@@ -53,9 +55,14 @@ class Star extends Component {
           </span>
         )}
         {!onlyStar &&
+        <Tooltip
+          content={<TooltipContent content={stars} /> }
+          position={Position.RIGHT_TOP}
+        >
           <div className="text-muted" style={{marginLeft: "4px"}}>
             {stars.length}
           </div>
+        </Tooltip>
         }
       </div>
     )

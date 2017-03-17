@@ -6,13 +6,23 @@ import Star from './Star'
 class AddComment extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      disabled: false,
+    }
     this.form = {
-      rock: this.props.rock
+      rock: this.props.rock,
     }
   }
   handleSubmit(e) {
+    this.setState({disabled: true})
     postComments(this.form)
-    .then(() => this.props.reload())
+    .then(stat => {
+      this.props.reload()
+      this.setState({disabled: false})
+      if (stat === 201) {
+        this.refs.com.value=""
+      }
+    })
     e.preventDefault()
     return false;
   }
@@ -20,9 +30,10 @@ class AddComment extends Component {
     const className = this.props.className + " flex-container"
     return(
       <div className={className}>
-        <Star onlyStar={true} rockId={this.props.rock}/>
+        <span className="pt-icon pt-icon-comment"> </span>
         <form className="add-comment" onSubmit={e => this.handleSubmit(e)}>
-          <input type="text" className="comment" placeholder="댓글"
+          <input ref="com" type="text" className="comment" placeholder="댓글"
+            disabled={this.state.disabled}
             onChange={e => this.form.text = e.target.value}
           />
         </form>

@@ -57,9 +57,8 @@ class Comment extends Component {
         </div>
         {me.map(me =>
           me.id == content.author &&
-          <div>
+          <div key={me.id}>
             <button type="button"
-              key={me.id}
               onClick={() => this.setState({alertDelete: true})}
               className="pt-button pt-minimal pt-icon-small-cross" />
             <Alert

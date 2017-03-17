@@ -88,9 +88,11 @@ class Card extends Component {
       {me.map(me => me.id == content.author && (
         this.state.writePebble ?
           <AddCard 
+            key={content.id}
             reload={() => this.init()}
             parentRock={content.id} /> :
           <p
+            key={content.id}
             className="more-comment"
             onClick={() => this.setState({writePebble: true})}>
             이어쓰기
