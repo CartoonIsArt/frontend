@@ -3,6 +3,7 @@ import {Toaster, Checkbox, InputGroup, Intent} from '@blueprintjs/core'
 import {patchMembers, whoami, getMembers} from './actions'
 import Image from './Image'
 import Dropzone from 'react-dropzone'
+import moment from 'moment'
 
 class ProfilePanel extends Component {
   constructor(props) {
@@ -109,6 +110,16 @@ class ProfilePanel extends Component {
                   onChange={e => this.form.last_name = e.target.value}
                   placeholder={target.last_name}
                   type="text" />
+              </div>
+              <div className="profile-input">
+                <div> 학번 </div>
+                <p> 
+                  {target.student_number}
+                </p>
+              </div>
+              <div className="profile-input">
+                <div> 생일 </div>
+                <p> {moment(target.date_of_birth).format('LL')} </p>
               </div>
               <div className="profile-input">
                 <div> 연락처 </div>

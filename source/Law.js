@@ -28,9 +28,5 @@ class Law extends Component {
     )
   }
 }
-// name, birth, phone, dept, isCont, isGrad, isStaff, isAct, isAnon, isRegular
-// name, birth, phone, dept,         Grad,            isAct
-//                           Cont             Staff           Anon     Regular
-
 
 export default Law
