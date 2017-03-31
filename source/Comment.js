@@ -19,19 +19,28 @@ class Comment extends Component {
       parent_comment: this.props.content.id,
       alertDelte: false,
       isRecommentDisabled: false,
+      style: {
+        display: "block",
+      }
     }
   }
   init() {
     this.props.depth === 1 &&
     getCommentsByParent(this.props.content.id)
     .then(json => this.setState({recomments: json}))
-    this.setState({text: ""})
-    this.setState({isRecommentDisabled: false})
+    this.setState({
+      text: "",
+      isRecommentDisabled: false,
+      alertDelete: false,
+    })
   }
   componentWillMount() {
     this.init()
   }
   deleteComment() {
+    this.setState({style: {
+      display: "none",
+    }})
     deleteComments(this.props.content.id)
     .then(() => this.init())
   }
@@ -48,8 +57,11 @@ class Comment extends Component {
     const depth=this.props.depth
     const text = this.state.text
     const isRecommentDisabled = this.state.isRecommentDisabled
+    const style = this.state.style
     return(
-    <div className={this.props.className && this.props.className}>
+    <div 
+      style={style}
+      className={this.props.className && this.props.className}>
       <div className="flex-container comment">
         <CardAuthor
           className="flex-grow-2"
@@ -70,7 +82,7 @@ class Comment extends Component {
               className="alert"
               isOpen={this.state.alertDelete}
               confirmButtonText="네"
-              onConfirm={() => this.props.deleteComment(content.id)}
+              onConfirm={() => this.deleteComment(content.id)}
               intent={Intent.DANGER}
               cancelButtonText="아니오"
               onCancel={() => this.setState({alertDelete: false})}
@@ -95,7 +107,6 @@ class Comment extends Component {
           key={recomment.id}
           className="recomment"
           content={recomment}
-          deleteComment={() => this.deleteComment()}
           me={me}
           depth={depth+1}
         />
