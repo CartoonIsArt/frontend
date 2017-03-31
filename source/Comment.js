@@ -18,6 +18,7 @@ class Comment extends Component {
       rock: this.props.content.rock,
       parent_comment: this.props.content.id,
       alertDelte: false,
+      isRecommentDisabled: false,
     }
   }
   init() {
@@ -25,6 +26,7 @@ class Comment extends Component {
     getCommentsByParent(this.props.content.id)
     .then(json => this.setState({recomments: json}))
     this.setState({text: ""})
+    this.setState({isRecommentDisabled: false})
   }
   componentWillMount() {
     this.init()
@@ -34,6 +36,7 @@ class Comment extends Component {
     .then(() => this.init())
   }
   recommentSubmit() {
+    this.setState({isRecommentDisabled: true})
     postComments(this.state)
     .then(() => this.init())
   }
@@ -44,6 +47,7 @@ class Comment extends Component {
     const recomments = this.state.recomments
     const depth=this.props.depth
     const text = this.state.text
+    const isRecommentDisabled = this.state.isRecommentDisabled
     return(
     <div className={this.props.className && this.props.className}>
       <div className="flex-container comment">
@@ -112,14 +116,14 @@ class Comment extends Component {
             </Link>
           </div>
           <div className="comment-text">
-            <EditableText
-              onChange={text => this.setState({text})}
+            <textarea
+              style={{width: "100%"}}
+              onChange={e => this.setState({text: e.target.value})}
               value={text}
               placeholder="답글"
-              multiline
-              minLines={3}
-              maxLines={12}
-            />
+              disabled={isRecommentDisabled}
+            >
+            </textarea>
             <div className="flex-container">
               <div className="flex-grow-2"> 
               </div>
