@@ -69,7 +69,7 @@ class AddCard extends Component {
     const isUploaded = this.state.isUploaded
     const attached_image = isUploaded ? this.state.attached_image : isUploaded
     const youtube = this.state.youtube
-    const placeholder = "### 제목\n***진하게*** \n[링크](https://cia.kw.ac.kr/)"
+    const placeholder = "### 제목\n**진하게** \n[링크](https://cia.kw.ac.kr/)"
     const toggleAttaching = this.state.toggleAttaching
     return(
       <div className="card">
