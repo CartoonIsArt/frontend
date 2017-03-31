@@ -49,13 +49,13 @@ class Admin extends Component {
           <div 
             onClick={() => this.setState({view: 0})}
             className="flex-container-row profile-slider">
-            <div> all </div>
+            <div> 모든회원 </div>
             <div> <strong> {members.length} </strong> </div>
           </div>
           <div 
             onClick={() => this.setState({view: 1})}
             className="flex-container-row profile-slider">
-            <div> activate </div>
+            <div> 활동인구 </div>
             <div> <strong> {activates.length} </strong> </div>
           </div>
         </div>
