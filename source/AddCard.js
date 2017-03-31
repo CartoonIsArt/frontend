@@ -18,6 +18,7 @@ class AddCard extends Component {
       isUploaded: false,
       parent_rock: null,
       attached_image: null,
+      toggleAttaching: false,
     }
   }
   componentWillMount() {
@@ -69,8 +70,10 @@ class AddCard extends Component {
     const attached_image = isUploaded ? this.state.attached_image : isUploaded
     const youtube = this.state.youtube
     const placeholder = "### 제목\n***진하게*** \n[링크](https://cia.kw.ac.kr/)"
+    const toggleAttaching = this.state.toggleAttaching
     return(
       <div className="card">
+      {(toggleAttaching || youtube) &&
         <Dropzone onDrop={this.onDrop} 
           className="card-dropzone flex-container">
           {
@@ -92,6 +95,29 @@ class AddCard extends Component {
           <span className="pt-icon pt-icon-media pt-icon-60 md-wd60"> </span>
           }
         </Dropzone>
+        }
+        <div className="card-content preview-menu">
+          <div className="flex-container">
+            <button 
+              onClick={() => this.setState({preview: false})}
+              type="button" className="pt-button pt-minimal text-soft preview-button" style={{
+                marginRight: "4px",
+                background: preview ? "#efefef" : "white"
+                }}> 글쓰기 </button>
+            <button 
+              onClick={() => this.setState({preview: true})}
+              type="button" className="pt-button pt-minimal text-soft preview-button" style={{
+                marginRight: "4px",
+                background: preview ? "white" : "#efefef",
+              }}> 미리보기 </button>
+            <div className="flex-grow-2"> </div>
+            <button 
+              onClick={() => this.setState({toggleAttaching: !toggleAttaching})}
+              className="pt-button pt-minimal pt-icon-media"> 
+              그림
+            </button>
+          </div>
+        </div>
         <div className="card-content">
         {
         preview ?
@@ -113,9 +139,6 @@ class AddCard extends Component {
         <div className="card-content flex-container">
           <div className="flex-grow-2">
           </div>
-          <button 
-            onClick={() => this.setState({preview: !this.state.preview})}
-            type="button" className="pt-button" style={{marginRight: "4px"}}> 미리보기 </button>
           <button
             onClick={() => this.post()}
             type="button" className="pt-button pt-intent-success"> 샤잇 </button>
