@@ -23,7 +23,7 @@ class AddCard extends Component {
   }
   componentWillMount() {
     if (Number.isInteger(this.props.parentRock)) {
-      this.setState({parent_rock: this.props.parentRock}, () => console.log(this.state))
+      this.setState({parent_rock: this.props.parentRock})
     }
   }
   resetState() {

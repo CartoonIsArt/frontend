@@ -10,6 +10,9 @@ class Image extends Component {
       file: []
     }
   }
+  componentWillUpdate() {
+    this.init()
+  }
   componentWillMount() {
     this.init()
   }

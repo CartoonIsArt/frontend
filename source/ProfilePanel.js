@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Toaster, Checkbox, InputGroup, Intent} from '@blueprintjs/core'
-import {patchMembers, whoami, getMembers} from './actions'
+import {putFiles, patchMembers, whoami, getMembers} from './actions'
 import Image from './Image'
 import Dropzone from 'react-dropzone'
 import moment from 'moment'
@@ -11,7 +11,7 @@ class ProfilePanel extends Component {
     this.state = {
       me: [],
       target: [],
-      profile_image: undefined,
+      profile_image: "none",
       disabled: false,
     }
     this.form = {}
@@ -92,7 +92,7 @@ class ProfilePanel extends Component {
                 <Dropzone onDrop={this.onDrop}
                   className="profile-dropzone">
                   <Image 
-                    imgId={this.state.profile_image ?
+                    imgId={("none" !== this.state.profile_image) ?
                       this.state.profile_image :
                       me.id === target.id ? 
                       me.profile_image : 

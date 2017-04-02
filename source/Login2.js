@@ -11,7 +11,6 @@ class Login2 extends Component {
     }
   }
   handleSubmit(e){
-    console.log('login')
     e.preventDefault()
     login(this.state)
     .then(stat =>
