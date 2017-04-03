@@ -55,6 +55,7 @@ render(
       <Route path="create" component={CreateCard} />
       <Route path="signin" component={Signin} />
       <Route path="login" component={Login} />
+      <Route path="login/:next" component={Login} />
       <Route path="about" component={About} />
       <Route path="search" component={Search} />
       <Route path="profile" component={Profile} />

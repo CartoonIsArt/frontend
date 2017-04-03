@@ -10,7 +10,11 @@ class OneCard extends Component {
       content: [],
     }
     getRocks(this.props.params.id)
-    .then(json => this.setState({content: [json]}))
+    .then(json => {
+      Number.isInteger(json) ?
+      this.context.router.push("/login/" + this.props.params.id) :
+      this.setState({content: [json]})
+    })
   }
   render() {
     const content = this.state.content

@@ -16,8 +16,11 @@ class Login extends Component {
     login(this.state)
     .then(stat =>
       stat === 200 ?
-      this.context.router.push('/') :
-      this.setState({loginfail: true})
+        this.props.params.next !== undefined ?
+          this.context.router.push('/rocks/' + this.props.params.next) :
+          this.context.router.push('/')
+        :
+        this.setState({loginfail: true})
     )
   }
   render() {
