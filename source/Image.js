@@ -11,7 +11,9 @@ class Image extends Component {
     }
   }
   componentWillUpdate() {
-    this.init()
+    if(this.state.file.length > 0 && this.props.imgId !== this.state.file[0].id) {
+      this.init()
+    }
   }
   componentWillMount() {
     this.init()
