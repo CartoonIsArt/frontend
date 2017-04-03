@@ -2,6 +2,7 @@ node_modules/
 *.map
 .sass-cache/
 *core
+*.swn
 *.swo
 *.swp
 bundle.js
