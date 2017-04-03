@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Tabs2, Tab2} from '@blueprintjs/core'
+import Doorlock from './Doorlock'
 import Law from './Law'
 import Halloffame from './Halloffame'
 import Struct from './Struct'
@@ -26,6 +27,11 @@ class About extends Component {
             id="law"
             title="회칙"
             panel={<Law />}
+          />
+          <Tab2
+            id="doorlock"
+            title="동방비번"
+            panel={<Doorlock />}
           />
           <Tab2
             id="halloffame"
