@@ -52,7 +52,7 @@ class Login extends Component {
             CIA는 당신이 더 나은 환경에서 덕질할 수 있도록 발전해왔습니다 . 
           </p>
           <p className="text-bright"> 
-            500여권의 만화책, 34인치 티비, 그리고 편안한 소파와 함께 쾌적한 오타쿠라이프를 즐겨보아요.
+            500여권의 만화책, 42인치 티비, 그리고 편안한 소파와 함께 쾌적한 오타쿠라이프를 즐겨보아요.
           </p>
         </div>
         <div className="loginform">
