@@ -25,7 +25,9 @@ nodejs와 그 패키지 매니저인 npm을 설치합니다
 
     $ npm [options]
 
-|option      |  기능      |
+|options     |  기능      |
 |------------|------------|
 |start       |빠른 빌드   |
 |run optimize|최적화 빌드 |
+
+결과 파일인 bundle.js를 확인합니다.
