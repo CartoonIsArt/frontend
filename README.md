@@ -1,6 +1,8 @@
 # 타임라인  
 본 깃은 동아리 웹사이트의 Timeline 프론트엔드입니다.  
 React를 사용합니다.  
+전체 소스코드를 빌드하면 bundle.js를 얻을 수 있습니다.  
+bundle.js파일은 cms의 index.html이 불러오는 static파일입니다.  
 
 ## 설치  
 Timeline 프로젝트를 설치하는 방법에 대해 설명합니다.  
@@ -30,4 +32,4 @@ nodejs와 그 패키지 매니저인 npm을 설치합니다
 |start       |빠른 빌드   |
 |run optimize|최적화 빌드 |
 
-결과 파일인 bundle.js를 확인합니다.
+결과 파일인 bundle.js를 확인합니다.  
