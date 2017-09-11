@@ -37,9 +37,11 @@ class Navigationbar extends Component {
     return(
     <nav className="pt-navbar pt-fixed-top .modifier">
       <div className="pt-navbar-group">
-          <div className="col-4" onClick={() => this.handleClick(create)}>
+          <div className="col-4">
             <div className="nav-button-cover">
-              <span className="pt-minimal pt-icon-edit pt-icon-large" />
+              <a href="https://cia.kw.ac.kr/wiki/index.php" target="_blank" >
+                <span className="pt-minimal pt-icon-database pt-icon-large" />
+              </a>
             </div>
           </div>
         <div className="col-4" onClick={() => this.handleClick(search)}>

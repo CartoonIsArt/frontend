@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {whoami} from './actions'
-import {doorlock} from './PPPPP.js'
+import {doorlock} from './config.js'
 
 class Doorlock extends Component {
   constructor(props) {
